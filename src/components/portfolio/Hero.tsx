@@ -1,6 +1,8 @@
-import portrait from "@/assets/ankush-portrait.jpg";
-import { ArrowDown, ArrowUpRight, Download, Github, Linkedin, Globe } from "lucide-react";
-
+import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
+import TwitterIcon from "../../assets/icons/x.svg";
+import LinkedInIcon from "../../assets/icons/linkedin.svg";
+import GithubIcon from "../../assets/icons/github.svg";
+import PortraitImage from "../../assets/ankush-portrait.jpg";
 export function Hero() {
   return (
     <section id="home" className="relative min-h-screen pt-24 pb-16 overflow-hidden">
@@ -19,15 +21,16 @@ export function Hero() {
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
             Ankush Kumar
             <span className="block text-muted-foreground/60 text-3xl sm:text-4xl lg:text-5xl mt-2 font-normal">
-              Software Engineer <span className="text-electric">/</span> SDE-2
+              Software Engineer
             </span>
           </h1>
 
           <p className="mt-8 text-lg text-muted-foreground max-w-xl leading-relaxed">
-            Frontend specialist crafting <span className="text-foreground">intuitive, performant UIs</span>{" "}
-            with React & TypeScript — backed by Python / FastAPI on the server and
-            an <span className="text-emerald">expanding curiosity for AI agents</span>.
-            Currently engineering at Cargill.
+            Frontend specialist crafting{" "}
+            <span className="text-foreground">intuitive, performant UIs</span> with React &
+            TypeScript — backed by Python / FastAPI on the server and an{" "}
+            <span className="text-emerald">expanding curiosity for AI agents</span>. Currently
+            engineering at Cargill.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -39,7 +42,7 @@ export function Hero() {
               <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
             <a
-              href="/resume.pdf"
+              href="https://drive.google.com/file/d/1Oogs-_4_U7CJhI6rQ-i1hMAP30D8u4rP/view?usp=drivesdk"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-border bg-surface/50 hover:bg-surface transition-colors font-medium"
             >
               <Download className="size-4" /> Download Resume
@@ -47,40 +50,67 @@ export function Hero() {
           </div>
 
           <div className="mt-10 flex items-center gap-5 text-muted-foreground">
-            <a href="https://github.com/" target="_blank" rel="noreferrer" className="hover:text-electric transition-colors"><Github className="size-5" /></a>
-            <a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="hover:text-electric transition-colors"><Linkedin className="size-5" /></a>
-            <a href="https://ankush.netlify.app/" target="_blank" rel="noreferrer" className="hover:text-electric transition-colors"><Globe className="size-5" /></a>
-            <span className="text-xs ml-2">github · linkedin · portfolio</span>
+            <a
+              href="https://github.com/Ankuuush"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-electric transition-colors"
+            >
+              <img src={GithubIcon} className="size-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ankush-kumar-b275841a9/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-electric transition-colors"
+            >
+              <img src={LinkedInIcon} className="size-5" />
+            </a>
+            <a
+              href="https://x.com/ankuuushdev"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-electric transition-colors"
+            >
+              <img src={TwitterIcon} className="size-5" />
+            </a>
+            <span className="text-xs ml-2">github · linkedin · x.com</span>
           </div>
         </div>
 
         {/* RIGHT — portrait */}
         <div className="lg:col-span-5 relative">
           <div className="relative mx-auto max-w-md">
-            <div className="absolute -inset-4 bg-gradient-to-br from-electric/40 via-transparent to-emerald/40 rounded-3xl blur-2xl" />
+            <div className="absolute -inset-4 bg-linear-to-br from-electric/40 via-transparent to-emerald/40 rounded-3xl blur-2xl" />
             <div className="relative rounded-3xl overflow-hidden border border-border bg-surface shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]">
               <img
-                src={portrait}
+                src={PortraitImage}
                 alt="Ankush Kumar portrait"
                 width={1024}
                 height={1280}
                 className="w-full h-auto object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-background/60 via-transparent to-transparent" />
             </div>
 
             {/* Floating badges */}
             <div className="absolute -top-4 -left-6 animate-float">
-              <div className="px-4 py-2 rounded-full bg-electric text-primary-foreground text-xs font-semibold shadow-[var(--shadow-glow)]">
+              <div className="px-4 py-2 rounded-full bg-electric text-primary-foreground text-xs font-semibold shadow-[--shadow-glow]">
                 React · TypeScript · Tailwind
               </div>
             </div>
-            <div className="absolute -bottom-4 -right-2 animate-float" style={{ animationDelay: "1.2s" }}>
-              <div className="px-4 py-2 rounded-full bg-emerald text-accent-foreground text-xs font-semibold shadow-[var(--shadow-emerald)]">
+            <div
+              className="absolute -bottom-4 -right-2 animate-float"
+              style={{ animationDelay: "1.2s" }}
+            >
+              <div className="px-4 py-2 rounded-full bg-emerald text-accent-foreground text-xs font-semibold shadow-[--shadow-emerald]">
                 Python · FastAPI · AI Agents
               </div>
             </div>
-            <div className="absolute top-1/2 -right-8 animate-float" style={{ animationDelay: "0.6s" }}>
+            <div
+              className="absolute top-1/2 -right-8 animate-float"
+              style={{ animationDelay: "0.6s" }}
+            >
               <div className="size-16 rounded-full bg-surface-2 border border-border grid place-items-center text-xs font-mono text-emerald">
                 90%↓
               </div>

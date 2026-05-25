@@ -39,7 +39,7 @@ const roles = [
 
 const skills = {
   "Frontend (specialty)": ["React.js", "TypeScript", "JavaScript", "HTML5", "CSS", "Tailwind CSS"],
-  "Backend": ["Python", "FastAPI", "PostgreSQL"],
+  Backend: ["Python", "FastAPI", "PostgreSQL"],
   "AI (learning)": ["OpenAI SDK", "AI Agents", "LLM Integration"],
   "Cloud & Tools": ["Azure", "AWS S3", "AWS EC2", "Firebase", "Apache ECharts"],
 };
@@ -63,7 +63,10 @@ export function Experience() {
               <div className="text-sm text-emerald">{r.company}</div>
               <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
                 {r.points.map((p) => (
-                  <li key={p} className="flex gap-2"><span className="text-electric">▸</span>{p}</li>
+                  <li key={p} className="flex gap-2">
+                    <span className="text-electric">▸</span>
+                    {p}
+                  </li>
                 ))}
               </ul>
             </li>
@@ -74,7 +77,9 @@ export function Experience() {
             <h3 className="mt-1 text-xl font-semibold flex items-center gap-2">
               <GraduationCap className="size-5 text-emerald" /> B.E., Information Science
             </h3>
-            <div className="text-sm text-muted-foreground">Acharya Institute of Technology · CGPA 8.44 / 10</div>
+            <div className="text-sm text-muted-foreground">
+              Acharya Institute of Technology · CGPA 8.44 / 10
+            </div>
           </li>
         </ol>
 
@@ -82,7 +87,9 @@ export function Experience() {
         <div className="lg:col-span-5 space-y-6">
           {Object.entries(skills).map(([cat, items]) => (
             <div key={cat} className="p-6 rounded-2xl border border-border bg-surface/60">
-              <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4">{cat}</div>
+              <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4">
+                {cat}
+              </div>
               <div className="flex flex-wrap gap-2">
                 {items.map((s) => (
                   <span

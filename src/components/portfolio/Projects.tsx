@@ -7,14 +7,16 @@ const projects = [
     tag: "Full-Stack · 90% automation",
     desc: "End-to-end placement management platform that automated 90% of the previously manual placement workflow — from student profiles to recruiter pipelines.",
     stack: ["React", "Node.js", "Firebase"],
+    link: "https://github.com/Ankuuush/acharya-placement-portal-frontend",
     accent: "electric",
   },
   {
-    title: "AgriSync AI Portal",
-    tag: "AI · IoT · Supply chain",
-    desc: "Agricultural intelligence tool combining storm simulation, IoT sensor ingestion, and AI-driven yield predictions to optimize the agri supply chain.",
-    stack: ["Next.js", "FastAPI", "TensorFlow", "IoT"],
-    accent: "emerald",
+    title: "Personal Developer Portfolio",
+    tag: "Frontend · Responsive UI",
+    desc: "A clean and responsive personal portfolio built from scratch to showcase my projects and technical journey, focusing on maintainable components and fast load times.",
+    stack: ["React.js", "TypeScript", "Tailwind CSS"],
+    link: "https://github.com/Ankuuush",
+    accent: "teal",
   },
 ];
 
@@ -45,15 +47,24 @@ export function Projects() {
               }`}
             />
             <div className="relative">
-              <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">{p.tag}</div>
+              <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+                {p.tag}
+              </div>
               <h3 className="mt-3 text-2xl font-display font-bold flex items-center gap-2">
                 {p.title}
-                <ArrowUpRight className="size-5 text-muted-foreground group-hover:text-electric group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                <a href={p.link} target="_blank">
+                  <ArrowUpRight className="size-5 text-muted-foreground group-hover:text-electric group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                </a>
               </h3>
               <p className="mt-4 text-muted-foreground leading-relaxed">{p.desc}</p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {p.stack.map((s) => (
-                  <span key={s} className="px-2.5 py-1 text-xs font-mono rounded-md bg-surface-2 border border-border">{s}</span>
+                  <span
+                    key={s}
+                    className="px-2.5 py-1 text-xs font-mono rounded-md bg-surface-2 border border-border"
+                  >
+                    {s}
+                  </span>
                 ))}
               </div>
             </div>
@@ -63,10 +74,15 @@ export function Projects() {
 
       {/* Achievements */}
       <div className="mt-16">
-        <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-6">// Achievements</div>
+        <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-6">
+          // Achievements
+        </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {achievements.map((a) => (
-            <div key={a.label} className="p-5 rounded-2xl border border-border bg-surface/40 hover:border-emerald/50 transition-colors">
+            <div
+              key={a.label}
+              className="p-5 rounded-2xl border border-border bg-surface/40 hover:border-emerald/50 transition-colors"
+            >
               <div className="size-10 rounded-lg grid place-items-center bg-emerald/10 text-emerald mb-3">
                 {a.icon}
               </div>

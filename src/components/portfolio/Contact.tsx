@@ -1,8 +1,11 @@
 import { SectionLabel } from "./About";
-import { Mail, Phone, ArrowUpRight, Github, Linkedin, Globe } from "lucide-react";
+import { Mail, Phone, ArrowUpRight } from "lucide-react";
 import { useRef, useState } from "react";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
+import TwitterIcon from "../../assets/icons/x.svg";
+import LinkedInIcon from "../../assets/icons/linkedin.svg";
+import GithubIcon from "../../assets/icons/github.svg";
 
 const EMAILJS_SERVICE_ID = "service_sepuiqw";
 const EMAILJS_TEMPLATE_ID = "template_v30vmi9";
@@ -17,12 +20,9 @@ export function Contact() {
     if (!formRef.current) return;
     setSending(true);
     try {
-      await emailjs.sendForm(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        { publicKey: EMAILJS_PUBLIC_KEY },
-      );
+      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formRef.current, {
+        publicKey: EMAILJS_PUBLIC_KEY,
+      });
       toast.success("Message sent — I'll reply soon ✦");
       formRef.current.reset();
     } catch (err) {
@@ -39,42 +39,66 @@ export function Contact() {
       <div className="grid lg:grid-cols-12 gap-12 mt-10">
         <div className="lg:col-span-5">
           <h2 className="font-display text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]">
-            Let's <br /><span className="text-gradient">build</span> something.
+            Let's <br />
+            <span className="text-gradient">build</span> something.
           </h2>
           <p className="mt-6 text-muted-foreground text-lg max-w-md">
-            Have a role, a project, or just want to nerd out about scalable frontends?
-            The inbox is open.
+            Have a role, a project, or just want to nerd out about scalable frontends? The inbox is
+            open.
           </p>
 
           <div className="mt-10 space-y-4">
             <a href="mailto:kumarankush1709@gmail.com" className="flex items-center gap-3 group">
-              <span className="size-10 rounded-xl bg-electric/10 text-electric grid place-items-center"><Mail className="size-4" /></span>
-              <span className="text-sm group-hover:text-electric transition-colors">kumarankush1709@gmail.com</span>
+              <span className="size-10 rounded-xl bg-electric/10 text-electric grid place-items-center">
+                <Mail className="size-4" />
+              </span>
+              <span className="text-sm group-hover:text-electric transition-colors">
+                kumarankush1709@gmail.com
+              </span>
             </a>
             <div className="flex items-center gap-3">
-              <span className="size-10 rounded-xl bg-emerald/10 text-emerald grid place-items-center"><Phone className="size-4" /></span>
+              <span className="size-10 rounded-xl bg-emerald/10 text-emerald grid place-items-center">
+                <Phone className="size-4" />
+              </span>
               <span className="text-sm text-muted-foreground">Available on request</span>
             </div>
           </div>
 
           <div className="mt-10 flex items-center gap-3">
             {[
-              { href: "https://github.com/", icon: <Github className="size-4" /> },
-              { href: "https://linkedin.com/", icon: <Linkedin className="size-4" /> },
-              { href: "https://ankush.netlify.app/", icon: <Globe className="size-4" /> },
+              { href: "https://github.com/Ankuuush", icon: GithubIcon },
+              {
+                href: "https://www.linkedin.com/in/ankush-kumar-b275841a9/",
+                icon: LinkedInIcon,
+              },
+              { href: "https://x.com/ankuuushdev", icon: TwitterIcon },
             ].map((s, i) => (
-              <a key={i} href={s.href} target="_blank" rel="noreferrer"
-                 className="size-10 rounded-full border border-border bg-surface/60 hover:bg-electric hover:text-primary-foreground hover:border-electric transition-all grid place-items-center">
-                {s.icon}
+              <a
+                key={i}
+                href={s.href}
+                target="_blank"
+                rel="noreferrer"
+                className="size-10 rounded-full border border-border bg-surface/60 hover:bg-electric hover:text-primary-foreground hover:border-electric transition-all grid place-items-center"
+              >
+                <img src={s.icon} className="size-5" />
               </a>
             ))}
           </div>
         </div>
 
-        <form ref={formRef} onSubmit={onSubmit} className="lg:col-span-7 p-8 lg:p-10 rounded-3xl border border-border bg-surface/60 space-y-6">
+        <form
+          ref={formRef}
+          onSubmit={onSubmit}
+          className="lg:col-span-7 p-8 lg:p-10 rounded-3xl border border-border bg-surface/60 space-y-6"
+        >
           <Field label="Your name" name="full_name" placeholder="Jane Doe" />
           <Field label="Email address" name="email" type="email" placeholder="jane@company.com" />
-          <Field label="Tell me about the project" name="message" textarea placeholder="What are you building?" />
+          <Field
+            label="Tell me about the project"
+            name="message"
+            textarea
+            placeholder="What are you building?"
+          />
           <button
             type="submit"
             disabled={sending}
@@ -95,19 +119,37 @@ export function Contact() {
 }
 
 function Field({
-  label, name, type = "text", placeholder, textarea = false,
-}: { label: string; name: string; type?: string; placeholder?: string; textarea?: boolean }) {
+  label,
+  name,
+  type = "text",
+  placeholder,
+  textarea = false,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  placeholder?: string;
+  textarea?: boolean;
+}) {
   return (
     <label className="block">
-      <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">{label}</span>
+      <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+        {label}
+      </span>
       {textarea ? (
         <textarea
-          name={name} placeholder={placeholder} rows={4} required
+          name={name}
+          placeholder={placeholder}
+          rows={4}
+          required
           className="mt-2 w-full bg-transparent border-b border-border focus:border-electric outline-none py-3 text-base resize-none transition-colors"
         />
       ) : (
         <input
-          type={type} name={name} placeholder={placeholder} required
+          type={type}
+          name={name}
+          placeholder={placeholder}
+          required
           className="mt-2 w-full bg-transparent border-b border-border focus:border-electric outline-none py-3 text-base transition-colors"
         />
       )}
