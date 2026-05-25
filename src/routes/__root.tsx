@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 
+import browserTabIcon from "../assets/Browser-tab-icon.png?url";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -76,6 +77,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "icon", type: "image/png", sizes: "512x512", href: browserTabIcon },
+      { rel: "apple-touch-icon", href: browserTabIcon },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
