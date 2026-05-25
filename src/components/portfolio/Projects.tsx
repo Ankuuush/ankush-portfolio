@@ -15,7 +15,7 @@ const projects = [
     tag: "Frontend · Responsive UI",
     desc: "A clean and responsive personal portfolio built from scratch to showcase my projects and technical journey, focusing on maintainable components and fast load times.",
     stack: ["React.js", "TypeScript", "Tailwind CSS"],
-    link: "https://github.com/Ankuuush",
+    link: "https://github.com/Ankuuush/ankush-portfolio",
     accent: "teal",
   },
 ];
