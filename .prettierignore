@@ -3,6 +3,7 @@ dist
 .output
 .vinxi
 .netlify
+.vercel
 pnpm-lock.yaml
 package-lock.json
 bun.lock
