@@ -40,7 +40,7 @@ const roles = [
 const skills = {
   "Frontend (specialty)": ["React.js", "TypeScript", "JavaScript", "HTML5", "CSS", "Tailwind CSS"],
   Backend: ["Python", "FastAPI", "PostgreSQL"],
-  "AI (learning)": ["OpenAI SDK", "AI Agents", "LLM Integration"],
+  AI: ["OpenAI SDK", "AI Agents"],
   "Cloud & Tools": ["Azure", "AWS S3", "AWS EC2", "Firebase", "Apache ECharts"],
 };
 

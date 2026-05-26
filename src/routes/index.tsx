@@ -10,13 +10,13 @@ import { Toaster } from "@/components/ui/sonner";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ankush Kumar — Software Engineer & SDE-2" },
+      { title: "Ankush Kumar — Software Engineer" },
       {
         name: "description",
         content:
           "Portfolio of Ankush Kumar — SDE-2 building scalable frontend architectures, AI-integrated apps, and full-stack systems from Bangalore.",
       },
-      { property: "og:title", content: "Ankush Kumar — Software Engineer & SDE-2" },
+      { property: "og:title", content: "Ankush Kumar — Software Engineer" },
       {
         property: "og:description",
         content:
