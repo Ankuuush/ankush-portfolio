@@ -8,12 +8,12 @@ import tsConfigPaths from "vite-tsconfig-paths";
 
 // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
 // @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
-export default defineConfig(({ command }) => ({
+export default defineConfig(({ command, isPreview }) => ({
   server: {
     port: 3000,
   },
   plugins: [
-    ...(command === "build" ? [cloudflare({ viteEnvironment: { name: "ssr" } })] : []),
+    ...(command === "build" || isPreview ? [cloudflare({ viteEnvironment: { name: "ssr" } })] : []),
     tsConfigPaths({ projects: ["./tsconfig.json"] }),
     tanstackStart({ server: { entry: "server" } }),
     viteReact(),
