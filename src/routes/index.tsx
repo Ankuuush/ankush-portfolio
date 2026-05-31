@@ -6,6 +6,7 @@ import { Experience } from "@/components/portfolio/Experience";
 import { Projects } from "@/components/portfolio/Projects";
 import { Contact } from "@/components/portfolio/Contact";
 import { Toaster } from "@/components/ui/sonner";
+import { Chatbot } from "@/components/portfolio/Chatbot";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,6 +40,7 @@ function Index() {
         <Projects />
         <Contact />
       </main>
+      <Chatbot />
       <Toaster theme="dark" />
     </div>
   );
